@@ -33,48 +33,37 @@ tell application "Adobe Illustrator"
        set base to artboard rectangle of artboard 1
        log base as text
 
-       set i to 1 -- page item counter 
        set k to 1 -- cell counter
 
        set m to count of page items
 
        set t to page items
 
-       repeat while i <= m
-           set current_item to item i of t
 
-	   set c to 1
-	   log "page items"
-	   log count of page items
-	   -- log "index " & (index of i as text)
+       set c to 1
+       repeat while c <= count of artboard_rectangles
+       	   set i to 1 -- page item counter 
 
-	   repeat while c <= count of artboard_rectangles
+	   repeat while i <= m
+               set current_item to item i of t
+	       set pos to position of current_item
+	       set x_off to (item 1 of base) - (item c of artboard_rectangles)
+	       set y_off to (item 2 of base) - (item (c + 1) of artboard_rectangles)	      
 
-	      set x_off to (item 1 of base) - (item c of artboard_rectangles)
-	      set y_off to (item 2 of base) - (item (c + 1) of artboard_rectangles)	      
+	       set x to (item 1 of pos) - x_off
+	       set y to (item 2 of pos) - y_off
 
-	      set pos to position of current_item
-	      set x to (item 1 of pos) - x_off
-	      set y to (item 2 of pos) - y_off
-	      
-	      log pos as text
-	      set new_item to duplicate current_item to end with properties { position: { x, y } }
+	       set new_item to duplicate current_item to end with properties { position: { x, y } }
 
-	      set contents of new_item to "" & (item k of values_list)
-	      set k to k + 1
+	       set contents of new_item to "" & (item k of values_list)
 
-       	      set c to c + 4
+	       set k to k + 1
+	       set i to i + 1
 
-	      log "-------"
-	      log "page items"
-	      log count of page items
-	      log "-------"
-	      if (count of page items > (4 * 48)) then
-	      	 return
-	      end if 
+	       if (count of page items > (4 * 48)) then return
        	   end repeat
 	   log "######"
-	   set i to i + 1
+       	   set c to c + 4
        end repeat
 
        log count of artboards
