@@ -8,11 +8,15 @@ with some Excel thrown in for free
 script to create an Illustrator text box for each cell in the
 Excel selection
 
+[source](./blob/master/add_text_frame_from_excel.applescript)
+
 ---
 
 ### cells_sequence.applescript ###
 
 script to test the order in which an Excel cell selection gets iterated on 
+
+[source](./blob/master/cells_sequence.applescript)
 
 ---
 
@@ -23,14 +27,24 @@ with the content coming from the Excel selection
 probably fails if the number of text boxes is different from the number
 of columns, and if the number if artboards is more than the number of rows
 
+[source](./blob/master/cells_to_artboards.applescript)
+
+---
+
 ### create_artboards.applescript ###
 
 script that creates more artboards of the same size as the first one
 in the file
+
+[source](./blob/master/create_artboards.applescript)
 
 ---
 
 ### dynamic_dictionary.applescript ###
 
 test script for dynamic data structures in Applescript 
+
+[source](./blob/master/dynamic_dictionary.applescript)
+
+---
 
