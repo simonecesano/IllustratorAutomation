@@ -1,3 +1,11 @@
+-- ---------------------------------------------------------------------------
+-- script to replicate text boxes on Illustrator artboards 
+-- with the content coming from the Excel selection
+-- probably fails if the number of text boxes is different from the number
+-- of columns, and if the number if artboards is more than the number of rows
+-- TODO: checks
+-- ---------------------------------------------------------------------------
+
 set values_list to {}
 
 tell application "Microsoft Excel"
@@ -62,7 +70,6 @@ tell application "Adobe Illustrator"
 
 	       if (count of page items > (4 * 48)) then return
        	   end repeat
-	   log "######"
        	   set c to c + 4
        end repeat
 

@@ -1,3 +1,8 @@
+-- ---------------------------------------------------------------------------
+-- script to create an Illustrator text box for each cell in the
+-- Excel selection
+-- ---------------------------------------------------------------------------
+
 set values_list to {}
 
 tell application "Microsoft Excel"

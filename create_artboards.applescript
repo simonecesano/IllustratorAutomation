@@ -1,11 +1,14 @@
+-- ---------------------------------------------------------------------------
+-- script that creates more artboards of the same size as the first one
+-- in the file
+-- TODO: make number of artboards variable
+-- ---------------------------------------------------------------------------
+
 tell application "Adobe Illustrator"
   tell document 1
        log visible bounds as list
        log count of artboards
        log artboard rectangle of artboard 1 as list
-
-       set x_pos to {1, 2, 3}
-       set y_pos to reverse of {1, 2, 3, 4}
 
        set w to width
        set h to height
@@ -14,14 +17,9 @@ tell application "Adobe Illustrator"
        repeat while y > 0
        	   set x to 1
        	   repeat while x <= 3
-	      -- log { x, y }
 	      set art_rect to { w * (x - 1), h * y, w * x, h * (y - 1) }
-	      -- log art_rect
 	      set n to "artboard_" & (x as integer) & "_" & (y as integer)
-	      -- log n
-              -- set ab to make new artboard with properties { artboard rectangle: art_rect }
-	      -- log ab
-	      -- set name of ab to n
+              set ab to make new artboard with properties { artboard rectangle: art_rect }
 	      set x to x + 1
 	   end repeat
 	   set y to y - 1

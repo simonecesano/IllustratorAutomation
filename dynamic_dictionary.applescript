@@ -1,3 +1,7 @@
+-- ---------------------------------------------------------------------------
+-- test script for dynamic data structures in Applescript 
+-- ---------------------------------------------------------------------------
+
 use framework "Foundation"
 
 set aString to current application's NSString's stringWithString:"hello"
@@ -32,3 +36,7 @@ repeat while j <= 12
     end repeat
     set j to j + 1
 end repeat
+
+
+-- https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptLangGuide/reference/ASLR_handlers.html#//apple_ref/doc/uid/TP40000983-CH7g-SW4
+-- https://developer.apple.com/library/content/documentation/AppleScript/Conceptual/AppleScriptLangGuide/conceptual/ASLR_about_handlers.html#//apple_ref/doc/uid/TP40000983-CH206-SW13
