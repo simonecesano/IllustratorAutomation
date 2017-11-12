@@ -1,7 +1,6 @@
 -- ---------------------------------------------------------------------------
 -- script that creates more artboards of the same size as the first one
 -- in the file
--- TODO: make number of artboards variable
 -- ---------------------------------------------------------------------------
 
 on run argv
