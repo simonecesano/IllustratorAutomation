@@ -4,8 +4,6 @@
 
 use framework "Foundation"
 
-set aString to current application's NSString's stringWithString:"hello"
-
 set variableListFunderName to {}
 set i to 1
 repeat while i <= 12
