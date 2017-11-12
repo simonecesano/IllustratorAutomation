@@ -30,7 +30,7 @@ tell application "Adobe Illustrator"
        log items_list
 
        set artboard_rectangles to {}
-       set c to 2       
+       set c to 2 -- start from second artboard      
 
        repeat while c <= artboards_count 
 	      set artboard_rectangles to artboard_rectangles & (artboard rectangle of artboard c)
@@ -42,11 +42,8 @@ tell application "Adobe Illustrator"
        log base as text
 
        set k to 1 -- cell counter
-
        set m to count of page items
-
        set t to page items
-
 
        set c to 1
        repeat while c <= count of artboard_rectangles
@@ -63,12 +60,10 @@ tell application "Adobe Illustrator"
 
 	       set new_item to duplicate current_item to end with properties { position: { x, y } }
 
-	       set contents of new_item to "" & (item k of values_list)
+	       if (k <= count of values_list) then set contents of new_item to "" & (item k of values_list)
 
 	       set k to k + 1
 	       set i to i + 1
-
-	       if (count of page items > (4 * 48)) then return
        	   end repeat
        	   set c to c + 4
        end repeat
