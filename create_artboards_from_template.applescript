@@ -1,7 +1,9 @@
 -- ---------------------------------------------------------------------------
--- script that creates more artboards of the same size as the first one
--- in the file
--- TODO: make number of artboards variable
+-- script that gets data from Excel and then 
+-- creates more artboards of the same size as the first one
+-- in the file filling text frames that begin with '{{ ' with the
+-- corresponding value in the Excel data 
+-- TODO: make number of per row variable
 -- ---------------------------------------------------------------------------
 
 use framework "Foundation"
@@ -13,11 +15,14 @@ on run argv
    -- START: intro setup
    -- ---------------------------------------------------------
 
-   if count of argv > 0 then
-      set artboard_count to item 1 of argv
-   else
-      set artboard_count to 12
-   end if
+   
+   tell application "Microsoft Excel" to set artboard_count to (count of rows in selection - 1)
+
+   -- if count of argv > 0 then
+   --    set artboard_count to item 1 of argv
+   -- else
+   --    set artboard_count to 12
+   -- end if
 
    -- ---------------------------------------------------------
    -- set width and height
